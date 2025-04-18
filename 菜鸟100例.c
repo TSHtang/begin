@@ -181,6 +181,24 @@
 //题目十一：古典问题（兔子生崽）：有一对兔子，从出生后第3个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？（输出前40个月即可）
 //题目十二：判断 101 到 200 之间的素数。
 int solution_12() {
+	int i,k;
+	int j = 101;
+	int sushu[100];
+	for (i = 0; i <= 99; i++) {
+		sushu[i] = j;
+		j++;
+	}
+	for (i = 0; i < 100; i++) {
+		for (k = 2; k <i; k++) {
+			if (sushu[i] % k == 0) {
+				sushu[i] = 0;
+			}
+		}
+		if (sushu[i] != 0) {
+			printf("%d\n", sushu[i]);
+		}
+	}
+	
 
 	return 0;
 }
@@ -211,7 +229,7 @@ int main() {
 	//solution_9();
 	//solution_10();
 	//solution_11();
-	//solution_12();
+	solution_12();
 	//solution_13();
 	//solution_14();
 
